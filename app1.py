@@ -35,7 +35,7 @@ def predict():
     cpp=[]  #
     if request.method == 'POST':
         message = request.form['message']
-        review = re.sub('[^a-zA-Z]', ' ',"kill woman brutally")  
+        review = re.sub('[^a-zA-Z]', ' ',message)  
         review = review.lower()
         review = review.split()
         ps = PorterStemmer()
