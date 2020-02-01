@@ -35,7 +35,7 @@ def predict():
     cpp=[]  #
     if request.method == 'POST':
         message = request.form['message']
-        review = re.sub('[^a-zA-Z]', ' ',"kill woman brutally")  
+        review = re.sub('[^a-zA-Z]', ' ',message)  
         review = review.lower()
         review = review.split()
         ps = PorterStemmer()
@@ -44,7 +44,9 @@ def predict():
         cpp.append(review)
         ans=cvv.transform(cpp).toarray()
         
-        y_pred_ans = rf.predict(ans)
+        y_pred_ans1 = rf.predict(ans)
+        print(y_pred_ans1)
+        y_pred_ans=y_pred_ans1
         y_pred_ans=y_pred_ans.round()
 
         if y_pred_ans==[0]:
@@ -53,7 +55,7 @@ def predict():
             my_pred=1
         else:
             my_pred=2
-    return render_template('result.html',prediction = my_pred,l=y_pred_ans)
+    return render_template('result.html',prediction = my_pred,l=y_pred_ans1)
 
 
 

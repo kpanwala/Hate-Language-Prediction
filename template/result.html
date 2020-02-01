@@ -22,10 +22,8 @@
 			{{e}}
 		<!-- </h6> -->
     	{% endfor %}
-	{% if prediction == 0 %}
+	{% if prediction == 1 %}
 	<h2 style="color:red; font-size:2em;">Hatred Message </h2>
-	{% elif prediction == 1 %}
-	<h2 style="color:red; font-size:2em;">Offensive Message</h2>
 	{% else%}
 	<h2 style="color:green; font-size:2em;">Regular message</h2>
 	{% endif %}

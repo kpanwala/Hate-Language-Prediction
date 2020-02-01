@@ -6,7 +6,7 @@ from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 
 
-cvv = pickle.load(open("tfidf_vectorizer.pickle", "rb"))
+cvv = pickle.load(open("tfidf_vectorizer1.pickle", "rb"))
 
 cpp=[]
 review = re.sub('[^a-zA-Z]', ' ', "Muslims should be brutally killed")
